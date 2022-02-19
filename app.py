@@ -30,11 +30,11 @@ def index():
         
         model = joblib.load("DBSDT_MT")
         pred = model.predict([[float(rates)]])
-        s2 = "Predicted DBS share price based on linear regression model: " + str(pred) 
+        s2 = "Predicted DBS share price based on decision tree model: " + str(pred) 
         
         model = joblib.load("DBSNN_MT")
         pred = model.predict([[float(rates)]])
-        s3 = "Predicted DBS share price based on linear regression model: " + str(pred)
+        s3 = "Predicted DBS share price based on neural network model: " + str(pred)
         
         return(render_template("index.html", result1 = s, result2 = s2, result3 = s3))
     else:
